@@ -1,0 +1,87 @@
+﻿@model IEnumerable<MVC_CRUD.Models.User>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+    <form>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="fname" placeholder="First Name">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="lname" placeholder="Last Name">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="email" placeholder="Email">
+                </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="phone" placeholder="Phone">
+                    </div>
+                    </div>
+            </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="city" placeholder="City">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="add" placeholder="Address">
+                </div>
+            </div>
+        </div>
+                    
+                        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fname</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td> @Html.DisplayFor(ModelItem => item.id)</td>
+                        <td> @Html.DisplayFor(ModelItem => item.fname)</td>
+                        <td> @Html.DisplayFor(ModelItem => item.lname)</td>
+                        <td> @Html.DisplayFor(ModelItem => item.email)</td>
+                        <td> @Html.DisplayFor(ModelItem => item.phone)</td>
+                        <td> @Html.DisplayFor(ModelItem => item.city)</td>
+                        <td> @Html.DisplayFor(ModelItem => item.address)</td>
+
+                        <td><a href="@Url.Action("edit","Home" , new {id = item.id})">Edit</a><a href="@Url.Action("delete","Home",new {id=item.id})">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+    </div>
+

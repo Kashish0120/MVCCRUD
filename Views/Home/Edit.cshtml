@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MVC_CRUD.Models.User>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Hello</h2>
+
+@foreach (var item in Model)
+{
+    <form action="@Url.Action("Update")" method="post">
+        <input type="hidden" value="@Html.DisplayFor(ModelItem => item.id)" name="id" />
+        <input type="text" value="@Html.DisplayFor(ModelItem => item.fname)" name="fname" />
+        <input type="text" value="@Html.DisplayFor(ModelItem => item.lname)" name="lname" />
+        <input type="text" value="@Html.DisplayFor(ModelItem => item.email)" name="email" />
+        <input type="text" value="@Html.DisplayFor(ModelItem => item.phone)" name="phone" />
+        <input type="text" value="@Html.DisplayFor(ModelItem => item.city)" name="city" />
+        <input type="text" value="@Html.DisplayFor(ModelItem => item.address)" name="add" />
+        <input type="submit" value="submit" />
+
+    </form>
+}
